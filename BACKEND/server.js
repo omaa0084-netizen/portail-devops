@@ -13,7 +13,8 @@ app.use((req, res, next) => {
 app.get('/api/test', (req, res) => {
     res.json({ message: 'Backend OK !' });
 });
-
+# Ajoute un commentaire dans le backend
+echo "// Déploiement automatique réussi !" >> BACKEND/server.js
 // Démarrer le serveur
 app.listen(port, () => {
     console.log(`Backend démarré sur http://localhost:${port}`);
