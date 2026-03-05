@@ -1,0 +1,35 @@
+name: Déploiement sur Azure
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Connexion au registre Azure
+        run: |
+          echo "Connexion avec le secret REGISTRY_PASSWORD..."
+          echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login devopsomar776.azurecr.io -u devopsomar776 --password-stdin
+
+      - name: Build et push du Backend
+        run: |
+          cd BACKEND
+          docker build -t devopsomar776.azurecr.io/portail-backend:${{ github.sha }} .
+          docker push devopsomar776.azurecr.io/portail-backend:${{ github.sha }}
+
+      - name: Build et push du Frontend
+        run: |
+          cd mon-app-react
+          docker build -t devopsomar776.azurecr.io/portail-frontend:${{ github.sha }} .
+          docker push devopsomar776.azurecr.io/portail-frontend:${{ github.sha }}
+
+      - name: Afficher les URLs
+        run: |
+          echo "✅ Images poussées avec succès !"
+          echo "Backend: devopsomar776.azurecr.io/portail-backend:${{ github.sha }}"
+          echo "Frontend: devopsomar776.azurecr.io/portail-frontend:${{ github.sha }}" 
