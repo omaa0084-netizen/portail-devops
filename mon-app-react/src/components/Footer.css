@@ -1,0 +1,7 @@
+.footer {
+  background-color: #333;    /* fond sombre */
+  color: white;              /* texte blanc */
+  text-align: center;        /* centré */
+  padding: 15px 0;           /* espace vertical */
+  margin-top: 40px;          /* espace avant le footer */
+}

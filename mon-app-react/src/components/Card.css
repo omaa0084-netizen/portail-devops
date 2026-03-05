@@ -1,0 +1,10 @@
+/* Style commun pour toutes les cartes (User, Produit, Post) */
+.card {
+  border: 1px solid #ccc;             /* bordure grise autour de la carte */
+  padding: 15px;                       /* espace à l'intérieur de la carte */
+  margin: 10px;                        /* espace entre les cartes */
+  border-radius: 10px;                 /* coins arrondis */
+  width: 200px;                         /* largeur fixe de la carte */
+  background: #36b4eb;                 /* couleur de fond bleu clair */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* ombre légère pour un effet "pro" */
+}

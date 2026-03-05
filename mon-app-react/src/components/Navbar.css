@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #333;      /* couleur de fond sombre */
+  padding: 10px 20px;          /* espace intérieur */
+}
+
+.navbar ul {
+  list-style: none;            /* supprime les puces par défaut */
+  display: flex;               /* aligne horizontalement */
+  gap: 20px;                   /* espace entre les items */
+  margin: 0;                   /* supprime marges par défaut */
+  padding: 0;
+}
+
+.navbar li {
+  color: white;                /* texte blanc */
+  cursor: pointer;             /* curseur pointeur au survol */
+}
+
+.navbar li:hover {
+  color: #00bfff;              /* couleur bleue au hover */
+}

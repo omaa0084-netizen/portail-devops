@@ -1,0 +1,24 @@
+# docker-compose.yml (à mettre dans DEVOPS/)
+
+version: '3.8'
+
+services:
+  backend:
+    build: ./BACKEND
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+
+  frontend:
+    build: ./mon-app-react
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge
